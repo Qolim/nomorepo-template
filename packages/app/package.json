@@ -4,12 +4,25 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "build": ""
+    "dev": "webpack serve",
+    "build": "webpack --mode=production"
   },
   "dependencies": {
     "app-ui": "^1.0.0",
     "app-util": "^1.0.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.3",
+    "@types/react-dom": "^17.0.3",
+    "clean-webpack-plugin": "^4.0.0-alpha.0",
+    "html-webpack-plugin": "^5.3.1",
+    "style-loader": "^2.0.0",
+    "ts-loader": "^8.1.0",
+    "typescript": "^4.2.4",
+    "webpack": "^5.31.2",
+    "webpack-cli": "^4.6.0",
+    "webpack-dev-server": "^3.11.2"
   }
 }

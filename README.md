@@ -57,6 +57,8 @@
 
 ## demo 实现
 
+- 版本 lerna@4.0.0 yarn@1.22.10
+
 - 创建全局结构
 
 ```javascript
