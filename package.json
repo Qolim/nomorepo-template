@@ -1,0 +1,15 @@
+{
+  "name": "nomorepo-template",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/Qolim/nomorepo-template.git",
+  "author": "ilim <liming12679@gmaiil.com>",
+  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "devDependencies": {
+    "lerna": "^4.0.0"
+  }
+}
