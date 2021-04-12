@@ -3,11 +3,13 @@
 ## 项目场景
 
 > 主项目 app，子项目 app-ui、app-util。app 依赖 app-ui,app-util，且开发 app 的过程中需要同时开发 app-ui 和 app-util。
+
 > app 和 app-ui，app-util 开发中通过 npm link 连接，三个包有大量共同第三方依赖。
 
 ## 痛点
 
 > 同时着手多个项目，需要在多个项目之间不断切换，维护和使用多套构建脚本，时间和精力消耗过大。
+
 > npm link 操作不够友好，相同依赖需要额外进行打包配置，多个 node_modules 管理不方便，依赖版本的控制也较为繁琐。
 
 ## lerna
@@ -18,24 +20,24 @@
 
 ```
 
-  | ｜-packages
-  | ｜ ｜-app
-  | ｜ ｜ ｜-node_modules
-  | ｜ ｜ ｜-package.json
-  | ｜ ｜-app-ui
-  | ｜ ｜ ｜-node_modules
-  | ｜ ｜ ｜-package.json
-  | ｜ ｜-app-util
-  | ｜ ｜ ｜-node_modules
-  | ｜ ｜ ｜ package.json
-  | ｜-package.json
-  | ｜-lerna.json
+| ｜-packages
+| ｜ ｜-app
+| ｜ ｜ ｜-node_modules
+| ｜ ｜ ｜-package.json
+| ｜ ｜-app-ui
+| ｜ ｜ ｜-node_modules
+| ｜ ｜ ｜-package.json
+| ｜ ｜-app-util
+| ｜ ｜ ｜-node_modules
+| ｜ ｜ ｜ package.json
+| ｜-package.json
+| ｜-lerna.json
 
 ```
 
 - 通过 lerna 提供的命令可以全局对所有包进行管理（link、安装、构建、发布等待）。
 
-#### lerna 虽然解决了全局管理多个包的问题，但是每个包仍然有自己的 node_modules。没有彻底解决多个包之间相同依赖管理的问题
+> #### lerna 虽然解决了全局管理多个包的问题，但是每个包仍然有自己的 node_modules。没有彻底解决多个包之间相同依赖管理的问题
 
 ## yarn workspace
 
@@ -165,4 +167,8 @@
 
 - 全局 git 管理、包版本(发布)管理待续。。。
 
-## [lerna 指令集](http://www.febeacon.com/lerna-docs-zh-cn/routes/commands/)
+## 相关文档
+
+> [lerna 指令集](http://www.febeacon.com/lerna-docs-zh-cn/routes/commands/)
+
+> [yarn workspace](https://classic.yarnpkg.com/en/docs/workspaces)
