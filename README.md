@@ -57,7 +57,7 @@
 
 ## demo 实现
 
-- 创建项目结构
+- 创建全局结构
 
 ```javascript
   mkdir project && cd project && yarn init -y && yarn add lerna -D && lerna init
@@ -66,6 +66,7 @@
 - 配置 package.json lerna.json
 
 ```javascript
+
   /** package.jso */
   {
     "private": true,
@@ -81,3 +82,77 @@
   }
 
 ```
+
+- 创建项目
+
+```javascript
+
+  /** 创建目录 */
+  cd packages && mkdir app && mkdir app-ui && mkdir app-util
+
+  /** 初始化 */
+  cd app && yarn init -y && cd ../app-ui && yarn init -y && cd ../app-util && yarn init -y
+
+```
+
+- 将 app-ui，app-util 加入 app 的依赖项
+
+```javascript
+
+  /** lerna一次只能安装一个包 */
+  lerna add app-ui --scope=app && lerna add app-util --scope=app
+
+```
+
+- 各个项目所需第三方依赖在各自项目目录下使用 yarn 安装(安装方式不变)
+
+- 全局依赖关联
+
+```javascript
+
+  /** 根目录 */
+  yarn install
+
+```
+
+- 全局脚本配置
+
+```javascript
+
+  /** ./packages/app/package.sjon */
+  {
+    "scripts": {
+      "build": "...",
+      "dev":"..."
+    },
+  }
+
+   /** ./packages/app-ui/package.sjon */
+  {
+    "scripts": {
+      "build": "...",
+    },
+  }
+
+   /** ./packages/app-util/package.sjon */
+  {
+    "scripts": {
+      "build": "...",
+    },
+  }
+
+  /** ./package.json */
+  {
+    "scripts": {
+      "dev": "lerna run --scope=app dev",
+      "build:app": "lerna run --scope=app build",
+      "build:app-ui": "lerna run --scope=app-ui build",
+      "build:app-util": "lerna run --scope=app-util build"
+    },
+  }
+
+```
+
+- 全局 git 管理、包版本(发布)管理待续。。。
+
+## [lerna 指令集](http://www.febeacon.com/lerna-docs-zh-cn/routes/commands/)

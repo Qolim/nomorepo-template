@@ -6,6 +6,12 @@
   "author": "ilim <liming12679@gmaiil.com>",
   "license": "MIT",
   "private": true,
+  "scripts": {
+    "build:app": "lerna run --scope=app build",
+    "dev:app": "lerna run --scope=app dev",
+    "build:app-ui": "lerna run --scope=app-ui build",
+    "build:app-util": "lerna run --scope=app-util build"
+  },
   "workspaces": [
     "packages/*"
   ],
