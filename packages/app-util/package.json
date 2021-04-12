@@ -1,6 +1,11 @@
 {
   "name": "app-util",
   "version": "1.0.0",
-  "main": "index.js",
-  "license": "MIT"
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "module": "lib",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^4.2.4"
+  }
 }

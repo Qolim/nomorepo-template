@@ -1,7 +1,9 @@
 {
   "name": "app-ui",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "module": "lib",
   "license": "MIT",
   "devDependencies": {
     "@types/react": "^17.0.3",
