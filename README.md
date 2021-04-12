@@ -156,8 +156,8 @@
   /** ./package.json */
   {
     "scripts": {
-      "dev": "lerna run --scope=app dev",
-      "build:app": "lerna run --scope=app build",
+      "dev": "npm run build:app-ui & npm run build:app-util & lerna run --scope=app dev",
+      "build:app": "npm run build:app-ui & npm run build:app-util & lerna run --scope=app build",
       "build:app-ui": "lerna run --scope=app-ui build",
       "build:app-util": "lerna run --scope=app-util build"
     },

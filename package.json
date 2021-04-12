@@ -7,8 +7,8 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "dev": "lerna run --scope=app dev",
-    "build:app": "lerna run --scope=app build",
+    "dev": "yarn run build:app-ui & yarn run build:app-util & lerna run --scope=app dev",
+    "build:app": "yarn run build:app-ui & yarn run build:app-util & lerna run --scope=app build",
     "build:app-ui": "lerna run --scope=app-ui build",
     "build:app-util": "lerna run --scope=app-util build"
   },
