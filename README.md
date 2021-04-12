@@ -16,18 +16,22 @@
 
 - lerna 优化后的项目结构。
 
-| ｜-packages
-| ｜ ｜-app
-| ｜ ｜ ｜-node_modules
-| ｜ ｜ ｜-package.json
-| ｜ ｜-app-ui
-| ｜ ｜ ｜-node_modules
-| ｜ ｜ ｜-package.json
-| ｜ ｜-app-util
-| ｜ ｜ ｜-node_modules
-| ｜ ｜ ｜ package.json
-| ｜-package.json
-| ｜-lerna.json
+```
+
+  | ｜-packages
+  | ｜ ｜-app
+  | ｜ ｜ ｜-node_modules
+  | ｜ ｜ ｜-package.json
+  | ｜ ｜-app-ui
+  | ｜ ｜ ｜-node_modules
+  | ｜ ｜ ｜-package.json
+  | ｜ ｜-app-util
+  | ｜ ｜ ｜-node_modules
+  | ｜ ｜ ｜ package.json
+  | ｜-package.json
+  | ｜-lerna.json
+
+```
 
 - 通过 lerna 提供的命令可以全局对所有包进行管理（link、安装、构建、发布等待）。
 
@@ -39,19 +43,23 @@
 
 - yarn workspace 优化后的项目结构。
 
-| ｜-node_modules
-| ｜-packages
-| ｜ ｜-app
-| ｜ ｜ ｜-node_modules // 并不会实际将依赖下载到该目录，所有依赖实际 link 到顶层 node_modules
-| ｜ ｜ ｜-package.json
-| ｜ ｜-app-ui
-| ｜ ｜ ｜-node_modules // 同上
-| ｜ ｜ ｜-package.json
-| ｜ ｜-app-util
-| ｜ ｜ ｜-node_modules // 同上
-| ｜ ｜ ｜ package.json
-| ｜-package.json
-| ｜-lerna.json
+```
+
+  | ｜-node_modules
+  | ｜-packages
+  | ｜ ｜-app
+  | ｜ ｜ ｜-node_modules // 并不会实际将依赖下载到该目录，所有依赖实际 link 到顶层 node_modules
+  | ｜ ｜ ｜-package.json
+  | ｜ ｜-app-ui
+  | ｜ ｜ ｜-node_modules // 同上
+  | ｜ ｜ ｜-package.json
+  | ｜ ｜-app-util
+  | ｜ ｜ ｜-node_modules // 同上
+  | ｜ ｜ ｜ package.json
+  | ｜-package.json
+  | ｜-lerna.json
+
+```
 
 - yarn workspace 实际将所有依赖下载到顶层一个 node_modules 中，各个子项目通过连接到顶层 node_modules 实现全局共享 node_nodules。
 
