@@ -4,7 +4,9 @@
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "module": "lib",
-  "license": "MIT",
+  "scripts": {
+    "build": "tsc"
+  },
   "devDependencies": {
     "typescript": "^4.2.4"
   }

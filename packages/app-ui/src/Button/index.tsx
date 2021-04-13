@@ -7,5 +7,5 @@ export default function Button({
   children?: any;
   className?: string;
 }): JSX.Element {
-  return <Button className={className}>{children}</Button>;
+  return <button className={className}>{children}</button>;
 }
