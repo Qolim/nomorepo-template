@@ -79,7 +79,7 @@
 
 ```javascript
 
-  /** package.jso */
+  /** package.json */
   {
     "private": true,
     "workspaces": [
